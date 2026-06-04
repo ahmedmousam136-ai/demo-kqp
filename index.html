@@ -641,10 +641,28 @@ body.lang-en-active .btn-en {
 .portfolio-subtitle { font-family: 'Space Grotesk', sans-serif; font-size: 1rem; color: var(--bg-canvas); margin-top: 10px; letter-spacing: 0.05em; opacity: 0.8; }
 .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .portfolio-card { border: 2px solid var(--bg-canvas); background: var(--ink-black); padding: 20px; transition: transform 0.3s; text-decoration: none; display: block; }
-.portfolio-card-link { cursor: pointer; }
-.portfolio-card:hover { transform: translateY(-5px); background: var(--bg-canvas); color: var(--ink-black); }
-.portfolio-card:hover .port-title { color: var(--ink-black); }
-.portfolio-card:hover .port-desc { color: var(--ink-black); }
+  .portfolio-card-link { cursor: pointer; }
+  .portfolio-card:hover { transform: translateY(-5px); background: var(--bg-canvas); color: var(--ink-black); }
+  .portfolio-card:hover .port-title { color: var(--ink-black); }
+  .portfolio-card:hover .port-desc { color: var(--ink-black); }
+  
+  /* ── PROJECT MODAL ── */
+  .project-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+  .project-modal-overlay.active { opacity: 1; visibility: visible; }
+  .project-modal-container { width: 90vw; height: 85vh; background: var(--ink-black); border: 2px solid var(--taxi-mustard); border-radius: 8px; position: relative; transform: scale(0.9); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+  .project-modal-overlay.active .project-modal-container { transform: scale(1); opacity: 1; }
+  .project-modal-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; background: var(--ink-black); border-bottom: 2px solid var(--taxi-mustard); }
+  .project-modal-title { font-family: 'Space Grotesk', sans-serif; font-size: 0.9rem; color: var(--bg-canvas); letter-spacing: 0.05em; }
+  .project-modal-close { background: var(--terracotta-red); color: white; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s, background 0.2s; }
+  .project-modal-close:hover { transform: scale(1.1); background: #c0392b; }
+  .project-modal-iframe { width: 100%; height: calc(100% - 60px); border: none; background: white; }
+  
+  @media (max-width: 768px) {
+    .project-modal-container { width: 95vw; height: 90vh; border-radius: 4px; }
+    .project-modal-header { padding: 10px 15px; }
+    .project-modal-title { font-size: 0.8rem; }
+    .project-modal-close { width: 32px; height: 32px; font-size: 1rem; }
+  }
 .port-img-placeholder { width: 100%; aspect-ratio: 16/9; background-color: var(--river-indigo); border: 2px solid var(--bg-canvas); margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; color: var(--bg-canvas); font-weight: 700; letter-spacing: 0.1em; }
 .portfolio-card:hover .port-img-placeholder { border-color: var(--ink-black); }
 .port-title { font-size: 1.5rem; font-weight: 800; color: var(--bg-canvas); margin-bottom: 10px; }
@@ -1363,47 +1381,47 @@ footer {
           <span class="lang-en en-text">click to view</span>
         </p>
       </div>
-      <div class="portfolio-grid">
-        <a href="https://ahmedmousam136-ai.github.io/restro/" target="_blank" rel="noopener" class="portfolio-card portfolio-card-link">
-          <div class="port-img-placeholder">PROJECT 01</div>
-          <h3 class="port-title">
-            <span class="lang-bn bn-text">রেস্তোরাঁ ওয়েবসাইট</span>
-            <span class="lang-hi hi-text">रेस्तरां वेबसाइट</span>
-            <span class="lang-en en-text">Restaurant Website</span>
-          </h3>
-          <p class="port-desc">
-            <span class="lang-bn bn-text">কলকাতার একটি নামী রেস্তোরাঁর জন্য সম্পূর্ণ অনলাইন উপস্থিতি তৈরি।</span>
-            <span class="lang-hi hi-text">कोलकाता के एक प्रसिद्ध रेस्तरां के लिए पूर्ण ऑनलाइन उपस्थिति।</span>
-            <span class="lang-en en-text">Complete online presence for a renowned Kolkata restaurant.</span>
-          </p>
-        </a>
-        <div class="portfolio-card">
-          <div class="port-img-placeholder">PROJECT 02</div>
-          <h3 class="port-title">
-            <span class="lang-bn bn-text">ই-কমার্স স্টোর</span>
-            <span class="lang-hi hi-text">ई-कॉमर्स स्टोर</span>
-            <span class="lang-en en-text">E-Commerce Store</span>
-          </h3>
-          <p class="port-desc">
-            <span class="lang-bn bn-text">হস্তশিল্পের পণ্য বিক্রির জন্য একটি সুন্দর অনলাইন শপ।</span>
-            <span class="lang-hi hi-text">हस्तशिल्प उत्पाद बेचने के लिए एक सुंदर ऑनलाइन शॉप।</span>
-            <span class="lang-en en-text">A beautiful online shop for selling handcraft products.</span>
-          </p>
-        </div>
-        <a href="https://ahmedmousam136-ai.github.io/school/" target="_blank" rel="noopener" class="portfolio-card portfolio-card-link">
-          <div class="port-img-placeholder">PROJECT 03</div>
-          <h3 class="port-title">
-            <span class="lang-bn bn-text">শিক্ষা প্রতিষ্ঠানের পোর্টাল</span>
-            <span class="lang-hi hi-text">शैक्षणिक संस्था पोर्टल</span>
-            <span class="lang-en en-text">Education Portal</span>
-          </h3>
-          <p class="port-desc">
-            <span class="lang-bn bn-text">একটি স্কুলের জন্য সম্পূর্ণ ম্যানেজমেন্ট ও যোগাযোগ পোর্টাল।</span>
-            <span class="lang-hi hi-text">एक स्कूल के लिए पूर्ण प्रबंधन और संचार पोर्टल।</span>
-            <span class="lang-en en-text">A complete management and communication portal for a school.</span>
-          </p>
-        </a>
-      </div>
+<div class="portfolio-grid">
+  <div class="portfolio-card portfolio-card-link" data-project-url="https://ahmedmousam136-ai.github.io/restro/">
+  <div class="port-img-placeholder">PROJECT 01</div>
+  <h3 class="port-title">
+  <span class="lang-bn bn-text">রেস্তোরাঁ ওয়েবসাইট</span>
+  <span class="lang-hi hi-text">रेस्तरां वेबसाइट</span>
+  <span class="lang-en en-text">Restaurant Website</span>
+  </h3>
+  <p class="port-desc">
+  <span class="lang-bn bn-text">কলকাতার একটি নামী রেস্তোরাঁর জন্য সম্পূর্ণ অনলাইন উপস্থিতি তৈরি।</span>
+  <span class="lang-hi hi-text">कोलकाता के एक प्रसिद्ध रेस्तरां के लिए पूर्ण ऑनलाइन उपस्थिति।</span>
+  <span class="lang-en en-text">Complete online presence for a renowned Kolkata restaurant.</span>
+  </p>
+  </div>
+  <div class="portfolio-card portfolio-card-link" data-project-url="https://ahmedmousam136-ai.github.io/e-commerce/">
+  <div class="port-img-placeholder">PROJECT 02</div>
+  <h3 class="port-title">
+  <span class="lang-bn bn-text">ই-কমার্স স্টোর</span>
+  <span class="lang-hi hi-text">ई-कॉमर्स स्टोर</span>
+  <span class="lang-en en-text">E-Commerce Store</span>
+  </h3>
+  <p class="port-desc">
+  <span class="lang-bn bn-text">হস্তশিল্পের পণ্য বিক্রির জন্য একটি সুন্দর অনলাইন শপ।</span>
+  <span class="lang-hi hi-text">हस्तशिल्प उत्पाद बेचने के लिए एक सुंदर ऑनलाइन शॉप।</span>
+  <span class="lang-en en-text">A beautiful online shop for selling handcraft products.</span>
+  </p>
+  </div>
+  <div class="portfolio-card portfolio-card-link" data-project-url="https://ahmedmousam136-ai.github.io/school/">
+  <div class="port-img-placeholder">PROJECT 03</div>
+  <h3 class="port-title">
+  <span class="lang-bn bn-text">শিক্ষা প্রতিষ্ঠানের পোর্টাল</span>
+  <span class="lang-hi hi-text">शैक्षणिक संस्था पोर्टल</span>
+  <span class="lang-en en-text">Education Portal</span>
+  </h3>
+  <p class="port-desc">
+  <span class="lang-bn bn-text">একটি স্কুলের জন্য সম্পূর্ণ ম্যানেজমেন্ট ও যোগাযোগ পোর্টাল।</span>
+  <span class="lang-hi hi-text">एक स्कूल के लिए पूर्ण प्रबंधन और संचार पोर्टल।</span>
+  <span class="lang-en en-text">A complete management and communication portal for a school.</span>
+  </p>
+  </div>
+  </div>
     </section>
 
     <!-- PROCESS -->
@@ -2273,8 +2291,72 @@ footer {
     }, { passive: false });
   });
 
-  // Reset zoom when modal closes
+// Reset zoom when modal closes
   var _origClose = closeCertModal;
+</script>
+
+<!-- PROJECT PREVIEW MODAL -->
+<div class="project-modal-overlay" id="projectModal">
+  <div class="project-modal-container">
+    <div class="project-modal-header">
+      <span class="project-modal-title">Project Preview</span>
+      <button class="project-modal-close" id="projectModalClose" title="Close (Esc)">&times;</button>
+    </div>
+    <iframe class="project-modal-iframe" id="projectIframe" src="" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+(function() {
+  var modal = document.getElementById('projectModal');
+  var iframe = document.getElementById('projectIframe');
+  var closeBtn = document.getElementById('projectModalClose');
+  
+  // Open modal with project URL
+  function openProjectModal(url) {
+    iframe.src = url;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  // Close modal and clear iframe
+  function closeProjectModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    // Clear iframe src to stop any running scripts/media
+    setTimeout(function() {
+      iframe.src = '';
+    }, 300);
+  }
+  
+  // Click listeners for project cards
+  document.querySelectorAll('.portfolio-card-link').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      e.preventDefault();
+      var url = this.getAttribute('data-project-url');
+      if (url) {
+        openProjectModal(url);
+      }
+    });
+  });
+  
+  // Close button click
+  closeBtn.addEventListener('click', closeProjectModal);
+  
+  // Click outside modal content to close
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      closeProjectModal();
+    }
+  });
+  
+  // Escape key to close
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeProjectModal();
+    }
+  });
+})();
 </script>
 </body>
 </html>
